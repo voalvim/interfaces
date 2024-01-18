@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 public class Installment {
     private static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    private LocalDate dueDate;
-    private Double amount;
+    private final LocalDate dueDate;
+    private final Double amount;
     public Installment(LocalDate dueDate, Double amount) {
         this.dueDate = dueDate;
         this.amount = amount;

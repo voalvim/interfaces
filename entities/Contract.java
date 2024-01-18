@@ -5,24 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contract {
-    private Integer number;
     private LocalDate date;
-    private Double totalValue;
-    private List<Installment> installments = new ArrayList<>();
-    public Contract() {
-    }
-    public Contract(Integer number, LocalDate date, Double totalValue) {
-        this.number = number;
+    private final Double totalValue;
+    private final List<Installment> installments = new ArrayList<>();
+    public Contract(LocalDate date, Double totalValue) {
         this.date = date;
         this.totalValue = totalValue;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
     }
 
     public LocalDate getDate() {
@@ -35,10 +23,6 @@ public class Contract {
 
     public Double getTotalValue() {
         return totalValue;
-    }
-
-    public void setTotalValue(Double totalValue) {
-        this.totalValue = totalValue;
     }
 
     public void addInstallments(Installment installment) {

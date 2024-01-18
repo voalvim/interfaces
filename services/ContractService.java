@@ -11,14 +11,6 @@ public class ContractService {
         this.paymentService = paymentService;
     }
 
-    public OnlinePaymentService getPaymentService() {
-        return paymentService;
-    }
-
-    public void setPaymentService(OnlinePaymentService paymentService) {
-        this.paymentService = paymentService;
-    }
-
     public void processContract(Contract contract, Integer months) {
         double monthlyInstallment = contract.getTotalValue() / months;
         for (int i = 1; i <= months; i++) {

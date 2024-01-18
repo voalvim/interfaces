@@ -25,7 +25,7 @@ public class Main {
         System.out.print("Valor do contrato: ");
         double totalValue = sc.nextDouble();
 
-        Contract contract = new Contract(number, date, totalValue);
+        Contract contract = new Contract(date, totalValue);
 
         System.out.print("Entre com o numero de parcelas: ");
         int months = sc.nextInt();

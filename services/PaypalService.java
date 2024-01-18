@@ -1,6 +1,6 @@
-package interfaces.entities;
+package interfaces.services;
 
-public class PaypalService implements OnlinePaymentService{
+public class PaypalService implements OnlinePaymentService {
     @Override
     public Double paymentFee(Double amount) {
         return amount * 0.02;

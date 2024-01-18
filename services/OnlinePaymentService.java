@@ -1,4 +1,4 @@
-package interfaces.entities;
+package interfaces.services;
 
 public interface OnlinePaymentService {
     public Double paymentFee(Double amount);

@@ -1,8 +1,10 @@
 package interfaces.application;
 
-import interfaces.entities.ContractService;
-import interfaces.entities.OnlinePaymentService;
-import interfaces.entities.PaypalService;
+import interfaces.entities.Contract;
+import interfaces.entities.Installment;
+import interfaces.services.ContractService;
+import interfaces.services.OnlinePaymentService;
+import interfaces.services.PaypalService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,21 +20,26 @@ public class Main {
         int number = sc.nextInt();
 
         System.out.print("Data (dd/MM/yyyy): ");
-
         LocalDate date = LocalDate.parse(sc.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-
         System.out.print("Valor do contrato: ");
-        double contractValue = sc.nextDouble();
+        double totalValue = sc.nextDouble();
+
+        Contract contract = new Contract(number, date, totalValue);
 
         System.out.print("Entre com o numero de parcelas: ");
-        int installments = sc.nextInt();
-
-        System.out.println("Parcelas:");
+        int months = sc.nextInt();
 
         OnlinePaymentService paymentService = new PaypalService();
 
-        ContractService service = new ContractService(paymentService);
+        ContractService contractService = new ContractService(paymentService);
+
+        contractService.processContract(contract, months);
+
+        System.out.println("Parcelas:");
+        for (Installment installment : contract.getInstallments()) {
+            System.out.println(installment.toString());
+        }
 
         sc.close();
     }

@@ -4,11 +4,8 @@ import interfaces.entities.ContractService;
 import interfaces.entities.OnlinePaymentService;
 import interfaces.entities.PaypalService;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {

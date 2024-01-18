@@ -1,19 +1,19 @@
 package interfaces.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Contract {
     private Integer number;
-    private Date date;
+    private LocalDate date;
     private Double totalValue;
-    private Installment installments;
+    private ArrayList<Installment> installments = new ArrayList<>();
     public Contract() {
     }
-    public Contract(Integer number, Date date, Double totalValue, Installment installments) {
+    public Contract(Integer number, LocalDate date, Double totalValue) {
         this.number = number;
         this.date = date;
         this.totalValue = totalValue;
-        this.installments = installments;
     }
 
     public Integer getNumber() {
@@ -24,11 +24,11 @@ public class Contract {
         this.number = number;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -40,7 +40,11 @@ public class Contract {
         this.totalValue = totalValue;
     }
 
-    public Installment getInstallments() {
+    public void setInstallments(Installment installment) {
+        installments.add(installment);
+    }
+
+    public ArrayList<Installment> getInstallments() {
         return installments;
     }
 
